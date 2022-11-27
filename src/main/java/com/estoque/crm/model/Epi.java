@@ -4,6 +4,8 @@ package com.estoque.crm.model;
 import jakarta.persistence.*;
 import lombok.Data;
 
+
+
 @Data
 @Entity
 public class Epi {
@@ -14,6 +16,10 @@ public class Epi {
 
     @Column(nullable = false)
     private String descricao;
+
+    @Column(nullable = false)
+    private int ca;
+
 
 
 
