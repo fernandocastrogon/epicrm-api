@@ -1,6 +1,6 @@
 # epicrm-api
 
-Criando uma REST API, utilizando no banco de dados relacional H2 SQL.
+Criando uma REST API com Spring Boot, utilizando no banco de dados relacional H2 SQL.
 
 ## ✔️ Técnicas e tecnologias utilizadas
 - Java 19
