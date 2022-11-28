@@ -26,4 +26,10 @@ public class EpiController {
         return epiRepository.save(epi);
     }
 
+    @DeleteMapping
+    @ResponseStatus(HttpStatus.ACCEPTED)
+    public void removerEpi(@RequestBody Epi epi){
+        epiRepository.delete(epi);
+    }
+
 }
