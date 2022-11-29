@@ -1,6 +1,7 @@
 package com.estoque.crm.model;
 
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -22,6 +23,7 @@ public class Epi {
     private int ca;
 
     @Column(nullable = false)
+    @JsonFormat(pattern = "dd-MM-yyyy")
     private LocalDate validadeCa;
 
     @Column(nullable = false)

@@ -32,4 +32,10 @@ public class EpiController {
         epiRepository.delete(epi);
     }
 
+    @PutMapping
+    @ResponseStatus(HttpStatus.ACCEPTED)
+    public void atualizarEpi(@RequestBody Epi epi){
+        epiRepository.save(epi);
+    }
+
 }
