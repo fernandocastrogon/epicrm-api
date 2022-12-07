@@ -2,6 +2,7 @@ package com.estoque.crm.controller;
 
 import com.estoque.crm.model.Epi;
 import com.estoque.crm.repository.EpiRepository;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -22,19 +23,19 @@ public class EpiController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public Epi adicionarEpi(@RequestBody Epi epi){
+    public Epi adicionarEpi(@Valid @RequestBody Epi epi){
         return epiRepository.save(epi);
     }
 
     @DeleteMapping
     @ResponseStatus(HttpStatus.ACCEPTED)
-    public void removerEpi(@RequestBody Epi epi){
+    public void removerEpi(@Valid @RequestBody Epi epi){
         epiRepository.delete(epi);
     }
 
     @PutMapping
     @ResponseStatus(HttpStatus.ACCEPTED)
-    public void atualizarEpi(@RequestBody Epi epi){
+    public void atualizarEpi(@Valid @RequestBody Epi epi){
         epiRepository.save(epi);
     }
 

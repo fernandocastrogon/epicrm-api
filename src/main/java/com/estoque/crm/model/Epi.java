@@ -3,6 +3,7 @@ package com.estoque.crm.model;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.*;
 import lombok.Data;
 
 import java.time.LocalDate;
@@ -16,20 +17,20 @@ public class Epi {
     @GeneratedValue(strategy = GenerationType.IDENTITY) //Incremento obrigado pelo banco de dados
     private Long id;
 
-    @Column(nullable = false)
+    @NotEmpty
     private String descricao;
 
-    @Column(nullable = false)
+    @NotNull
     private int ca;
 
-    @Column(nullable = false)
+    @Future (message = "A validade está vencida")
     @JsonFormat(pattern = "dd-MM-yyyy")
     private LocalDate validadeCa;
 
-    @Column(nullable = false)
+    @NotEmpty
     private String categoria;
 
-    @Column(nullable = false)
+    @NotNull
     private int quantidadeEstoque;
 
 
